@@ -1,5 +1,7 @@
 /* Global styles */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -7,6 +9,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
+  font-weight: 400;
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
@@ -15,6 +18,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  min-width: 320px; /* Prevent layout break on small screens */
+  overflow: hidden; /* Avoid scrollbars */
 }
 
 h1 {
@@ -27,7 +32,6 @@ h1 {
 h2 {
   color: #555;
   margin-top: 15px;
-  text-align: center;
   font-size: 1.5rem;
 }
 
@@ -37,6 +41,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15px; /* Consistent spacing */
   width: 100%;
   max-width: 400px;
   margin-top: 20px;
@@ -49,7 +54,7 @@ input {
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
@@ -76,6 +81,7 @@ button:hover {
 
 button:active {
   transform: scale(0.98);
+  background-color: #004085; /* Slight darkening on click */
 }
 
 p {
