@@ -8,13 +8,13 @@ function App() {
   const [checkResult, setCheckResult] = useState('');
   const [message, setMessage] = useState('');
 
-  const putApiUrl = 'https://tpc90unj0b.execute-api.us-east-1.amazonaws.com/prod/put_customer_id';
+  const putApiUrl = 'https://i3pk1bmzt4.execute-api.us-east-1.amazonaws.com/prod/put_customer_id';
   const getApiUrl = 'https://mz52oy6obe.execute-api.us-east-1.amazonaws.com/prod/get_customer_id';
 
   const handleAddId = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.put(putApiUrl, { id: idToAdd }, { headers: { 'Content-Type': 'application/json','Access-Control-Allow-Origin': '*' } });
+      const response = await axios.put(putApiUrl, { id: idToAdd }, { headers: { 'Content-Type': 'application/json'} });
       setMessage(`ID ${idToAdd} added successfully!`);
       setIdToAdd('');
     } catch (error) {
